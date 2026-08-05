@@ -67,7 +67,7 @@ export function Hero() {
 
       <div
         id="track"
-        className="absolute inset-x-0 -bottom-px mx-auto w-full max-w-5xl translate-y-1/2 px-5 lg:px-8"
+        className="absolute inset-x-0 -bottom-px z-20 mx-auto w-full max-w-5xl translate-y-1/2 px-5 lg:px-8"
       >
         <div className="rounded-2xl border border-border/60 bg-card p-5 shadow-float sm:p-7">
           <div className="flex flex-col gap-1 sm:flex-row sm:items-end sm:justify-between">
