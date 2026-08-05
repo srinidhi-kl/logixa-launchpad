@@ -21,7 +21,7 @@ export function Hero() {
   }, []);
 
   return (
-    <section id="top" className="relative isolate overflow-hidden pb-40 lg:pb-32">
+    <section id="top" className="relative isolate pb-40 lg:pb-32">
       <div className="absolute inset-0 -z-20 overflow-hidden">
         <img
           src={heroImage}
