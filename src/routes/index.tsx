@@ -1,24 +1,50 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { Navbar } from "@/components/logixa/Navbar";
+import { Hero } from "@/components/logixa/Hero";
+import { TrustBar } from "@/components/logixa/TrustBar";
+import { About } from "@/components/logixa/About";
+import { Services } from "@/components/logixa/Services";
+import { WhyChooseUs } from "@/components/logixa/WhyChooseUs";
+import { Process } from "@/components/logixa/Process";
+import { Industries } from "@/components/logixa/Industries";
+import { Testimonials } from "@/components/logixa/Testimonials";
+import { CtaBanner } from "@/components/logixa/CtaBanner";
+import { Footer } from "@/components/logixa/Footer";
 
-// No head() here: the home route inherits title/description/og/twitter from
-// __root.tsx, and ships no og:image so serve-time hosting can inject the
-// project's social preview (explicit og:image or latest screenshot).
+const title = "LOGIXA — Global Freight Forwarding & Supply Chain Solutions";
+const description =
+  "LOGIXA moves air, sea, land and project cargo worldwide. Custom clearance, warehousing and 24/7 tracking — uncomplicating global logistics, every mile.";
+
 export const Route = createFileRoute("/")({
+  head: () => ({
+    meta: [
+      { title },
+      { name: "description", content: description },
+      { property: "og:title", content: title },
+      { property: "og:description", content: description },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
+    ],
+  }),
   component: Index,
 });
 
-// IMPORTANT: Replace this placeholder. See ./README.md for routing conventions.
 function Index() {
   return (
-    <div
-      className="flex min-h-screen items-center justify-center"
-      style={{ backgroundColor: "#fcfbf8" }}
-    >
-      <img
-        data-lovable-blank-page-placeholder="REMOVE_THIS"
-        src="https://cdn.gpteng.co/blank-app-v1.svg"
-        alt="Your app will live here!"
-      />
+    <div className="min-h-screen bg-background">
+      <Navbar />
+      <main>
+        <Hero />
+        <TrustBar />
+        <About />
+        <Services />
+        <WhyChooseUs />
+        <Process />
+        <Industries />
+        <Testimonials />
+        <CtaBanner />
+      </main>
+      <Footer />
     </div>
   );
 }
